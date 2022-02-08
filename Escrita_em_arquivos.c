@@ -5,7 +5,9 @@
 int main(){
     setlocale(LC_ALL, "Portuguese");
     FILE *pont;
-    pont = fopen("..\\linguagem C\\ola.txt", "w");
+    /*Se n√£o tiver esse arquivo ele cria um com o nome repassado.*/
+    pont = fopen("..\\linguagem C\\arquivo.txt", "w");
+    //fazendo a verifica√ß√£o se deu certo abrir o arquivo
     if(pont == NULL){
         printf("ERRO!");
         exit(1);
@@ -16,11 +18,11 @@ int main(){
     for(i = 0; i  < strlen(texto); i++)
         fputc(texto[i], pont);
 
-    //escrevendo em um arquivo atravÈs de string
-    char string[30] = " Gravando atravÈs de fputs()";
+    //escrevendo em um arquivo atrav√©s de string
+    char string[30] = " Gravando atrav√©s de fputs()";
     int retorno = fputs(string, pont);
     if(retorno == EOF)
-        printf("Erro na gravaÁ„o");
+        printf("Erro na grava√ß√£o");
     fclose(pont);
     return 0;
 
