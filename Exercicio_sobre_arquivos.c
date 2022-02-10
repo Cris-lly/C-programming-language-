@@ -4,8 +4,8 @@
 #include <locale.h>
 
 /*
-Problema: ler um arquivo contendo um texto em minúsculo
-e criar outro arquivo com o texto em maiúsculo
+Problema: ler um arquivo contendo um texto em minÃºsculo
+e criar outro arquivo com o texto em maiÃºsculo
 */
 int main(){
     setlocale(LC_ALL, "Portuguese");
@@ -16,10 +16,10 @@ int main(){
         printf("ERRO!");
         exit(1);
     }
-    char aux = getc(texto1);
+    char aux = fgetc(texto1);
     while(aux != EOF){
         fputc(toupper(aux), texto2);
-        aux = getc(texto1);
+        aux = fgetc(texto1);
     }
     fclose(texto1);
     fclose(texto2);
